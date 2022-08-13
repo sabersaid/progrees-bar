@@ -1,8 +1,10 @@
 <h3>Test technique WEB-ATRIO réalisé par Saber Said </h3>
 <h3>réalisé le 13/08/2022</h3>
-<app-progress-bar [progress]="progress" [color]="color"></app-progress-bar>
-<progress-bar [progress]="'50'" [color]="'black'" >
-</progress-bar>
+<div *ngFor="let progressBar of progressBars">
+    <p>{{progressBar.title}}</p>
+<app-progress-bar [progress]="progressBar.progress" [color]="progressBar.color"></app-progress-bar>
+</div>
+
 
 <div class="buttons">
 <button (click)="resetCounter()" mat-button>Remettre à zéro les compteurs</button>
